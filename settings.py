@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -20,6 +22,7 @@ class ModelSettings(BaseSettings):
 
 class GithubSettings(BaseSettings):
     token: str
+    workspace: Path
 
     model_config = SettingsConfigDict(
         **COMMON_CONFIG,

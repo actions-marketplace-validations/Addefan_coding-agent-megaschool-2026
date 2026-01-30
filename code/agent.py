@@ -4,6 +4,7 @@ from agno.tools.file import FileTools
 from agno.tools.github import GithubTools
 from agno.tools.reasoning import ReasoningTools
 
+from code.tools import LocalGitTools
 from settings import settings
 
 
@@ -16,11 +17,12 @@ def get_agent():
         ),
         tools=[
             ReasoningTools(),
-            FileTools(),  # TODO: probably add enable_delete_file=True
+            FileTools(base_dir=settings.github.workspace),  # TODO: probably add enable_delete_file=True
             GithubTools(
                 access_token=settings.github.token,
                 include_tools=("get_issue", "create_pull_request"),
             ),
+            LocalGitTools(base_dir=settings.github.workspace),
         ],
         markdown=True,
     )
