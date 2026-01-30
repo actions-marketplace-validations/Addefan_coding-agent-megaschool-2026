@@ -23,6 +23,7 @@ class ModelSettings(BaseSettings):
 class GithubSettings(BaseSettings):
     token: str
     workspace: Path
+    repository: str
 
     model_config = SettingsConfigDict(
         **COMMON_CONFIG,
