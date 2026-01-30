@@ -8,7 +8,7 @@ COMMON_CONFIG = {
 
 
 class OpenRouterSettings(BaseSettings):
-    base_url: str
+    base_url: str = "https://openrouter.ai/api/v1"
     api_key: str
     model: str
 
@@ -18,8 +18,18 @@ class OpenRouterSettings(BaseSettings):
     )
 
 
+class GithubSettings(BaseSettings):
+    token: str
+
+    model_config = SettingsConfigDict(
+        **COMMON_CONFIG,
+        env_prefix="GITHUB_",
+    )
+
+
 class Settings(BaseSettings):
     openrouter: OpenRouterSettings = Field(default_factory=OpenRouterSettings)
+    github: GithubSettings = Field(default_factory=GithubSettings)
     debug: bool = False
 
     model_config = SettingsConfigDict(**COMMON_CONFIG)

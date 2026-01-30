@@ -8,4 +8,5 @@ dependencies = [
     "agno>=2.4.7",
     "openai>=2.16.0",
     "pydantic-settings>=2.12.0",
+    "pygithub>=2.8.1",
 ]
