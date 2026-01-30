@@ -43,7 +43,7 @@ jobs:
 
       - name: Coding Agent (start new task)
         if: github.event_name == 'issues'
-        uses: Addefan/coding-agent-megaschool-2026@v1.0.0
+        uses: Addefan/coding-agent-megaschool-2026@v1.0.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           model_api_key: ${{ secrets.MODEL_API_KEY }}
@@ -53,7 +53,7 @@ jobs:
 
       - name: Reviewer Agent (review PR)
         if: github.event_name == 'pull_request'
-        uses: Addefan/coding-agent-megaschool-2026@v1.0.0
+        uses: Addefan/coding-agent-megaschool-2026@v1.0.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           model_api_key: ${{ secrets.MODEL_API_KEY }}
@@ -63,7 +63,7 @@ jobs:
       
       - name: Coding Agent (fix after review)
         if: github.event_name == 'issue_comment' && github.issue.pull_request
-        uses: Addefan/coding-agent-megaschool-2026@v1.0.0
+        uses: Addefan/coding-agent-megaschool-2026@v1.0.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           model_api_key: ${{ secrets.MODEL_API_KEY }}

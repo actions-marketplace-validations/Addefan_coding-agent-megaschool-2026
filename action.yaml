@@ -35,7 +35,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://cr.yandex/crpugg3h45cgvu94nhip/agent:v1'
+  image: 'docker://cr.yandex/crpugg3h45cgvu94nhip/agent:v2'
   env:
     GITHUB_TOKEN: ${{ inputs.github_token }}
     MODEL_API_KEY: ${{ inputs.model_api_key }}

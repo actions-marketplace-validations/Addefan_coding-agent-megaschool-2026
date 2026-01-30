@@ -18,5 +18,5 @@ RUN uv sync --frozen
 
 COPY . .
 
-ENTRYPOINT ["uv", "run", "main.py"]
+ENTRYPOINT ["uv", "run", "/app/main.py"]
 CMD ["--help"]
